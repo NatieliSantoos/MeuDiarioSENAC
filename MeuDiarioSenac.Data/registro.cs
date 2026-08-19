@@ -1,6 +1,6 @@
 public class Registro
 {
-    public int IdRegistro { get; set; }
+    public int Id { get; set; }
     public string Titulo { get; set; }
  
     public DateTime Data { get; set; }
