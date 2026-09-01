@@ -11,6 +11,7 @@ C:\MeuDiarioSenac\back\MeuDiarioSenac.Data\obj\Debug\net9.0\refint\MeuDiarioSena
 C:\MeuDiarioSenac\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.pdb
 C:\MeuDiarioSenac\back\MeuDiarioSenac.Data\obj\Debug\net9.0\ref\MeuDiarioSenac.Data.dll
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\bin\Debug\net9.0\MeuDiarioSenac.Data.deps.json
+C:\workplace\devWeb\back\MeuDiarioSenac.Data\bin\Debug\net9.0\MeuDiarioSenac.Data.runtimeconfig.json
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\bin\Debug\net9.0\MeuDiarioSenac.Data.dll
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\bin\Debug\net9.0\MeuDiarioSenac.Data.pdb
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.csproj.AssemblyReference.cache
@@ -18,10 +19,9 @@ C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Dat
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.AssemblyInfoInputs.cache
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.AssemblyInfo.cs
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.csproj.CoreCompileInputs.cache
+C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.sourcelink.json
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.dll
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\refint\MeuDiarioSenac.Data.dll
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.pdb
-C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\ref\MeuDiarioSenac.Data.dll
-C:\workplace\devWeb\back\MeuDiarioSenac.Data\bin\Debug\net9.0\MeuDiarioSenac.Data.runtimeconfig.json
-C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.sourcelink.json
 C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\MeuDiarioSenac.Data.genruntimeconfig.cache
+C:\workplace\devWeb\back\MeuDiarioSenac.Data\obj\Debug\net9.0\ref\MeuDiarioSenac.Data.dll

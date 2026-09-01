@@ -507,6 +507,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.0",
           "MySql.Data": "26.7.0",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
         },

@@ -1,7 +1,22 @@
 ﻿RepositorioDiario repositorio = new RepositorioDiario();
 
+Console.WriteLine("Digite seu nome de usuario");
+string nomeUsuario;
 
-Console.WriteLine("Bem vindo ao seu diario");
+while (true)
+{
+    nomeUsuario = Console.ReadLine() ?? string.Empty;
+
+    if (!string.IsNullOrWhiteSpace(nomeUsuario))
+        break;
+
+    Console.WriteLine("Nome inválido. Digite um nome para continuar.");
+}
+
+var usuario = repositorio.ObterOuCriarUsuario(nomeUsuario);
+
+Console.WriteLine($"Bem vindo, {usuario.Nome}!");
+Console.WriteLine("============================");
 
 string opcao;
 do
@@ -10,13 +25,9 @@ do
     Console.WriteLine("escolha uma opçao");
     Console.WriteLine("");
     Console.WriteLine("1 = adicionar um novo registro");
-    Console.WriteLine("");
     Console.WriteLine("2 = Listar seus Registros");
-    Console.WriteLine("");
     Console.WriteLine("3 = Pesquisar seus registros");
-    Console.WriteLine("");
     Console.WriteLine("4 = Deletar  registro");
-    Console.WriteLine("");
     Console.WriteLine("5 =  SAIR ");
     Console.WriteLine("============================");
     opcao = Console.ReadLine();
@@ -24,68 +35,121 @@ do
     switch (opcao)
     {
         case "1":
-
             Registro cadastrar = new Registro();
             Console.WriteLine("");
+            cadastrar.Usuario = usuario;
+            cadastrar.UsuarioId = usuario.Id;
+            cadastrar.Data = DateTime.Now;
+
             Console.WriteLine("Titulo");
-            cadastrar.Titulo = Console.ReadLine();
+            while (true)
+            {
+                cadastrar.Titulo = Console.ReadLine() ?? string.Empty;
+                if (!string.IsNullOrWhiteSpace(cadastrar.Titulo))
+                    break;
+
+                Console.WriteLine("Título inválido. Digite um título.");
+            }
             Console.WriteLine("");
 
             Console.WriteLine("Abra seu coraçao");
-            cadastrar.Conteudo = Console.ReadLine();
+            while (true)
+            {
+                cadastrar.Conteudo = Console.ReadLine() ?? string.Empty;
+                if (!string.IsNullOrWhiteSpace(cadastrar.Conteudo))
+                    break;
+
+                Console.WriteLine("Conteúdo inválido. Digite algo para registrar.");
+            }
             Console.WriteLine("");
 
-            repositorio.CadastrarRegistro(cadastrar.Titulo, cadastrar.Conteudo);
+            try
+            {
+                repositorio.CadastrarRegistro(registro: cadastrar);
+                Console.WriteLine("Registro SALVO com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao salvar registro: {ex.Message}");
+            }
 
-            Console.WriteLine("Registro SALVO com sucesso!");
+            Thread.Sleep(2000);
             break;
+
         case "2":
-            List<Registro> listar = repositorio.ListarRegistros();
+            List<Registro> listar = repositorio.ListarRegistrosPorUsuario(usuario.Id);
 
             foreach (Registro registro in listar)
             {
-                Console.WriteLine($"ID: {registro.IdRegistro}");
+                Console.WriteLine($"ID: {registro.Id}");
                 Console.WriteLine($"Título: {registro.Titulo}");
                 Console.WriteLine($"Conteúdo: {registro.Conteudo}");
                 Console.WriteLine($"Data: {registro.Data}");
                 Console.WriteLine("========================");
                 Console.WriteLine("");
             }
+            Thread.Sleep(2000);
             break;
 
         case "3":
-    
-            Console.Write("Digite o ID: ");
-            int id = Convert.ToInt32(Console.ReadLine());
+            int id;
+            while (true)
+            {
+                Console.Write("Digite o ID: ");
+                var entradaId = Console.ReadLine();
 
-            List<Registro> pesquisa = repositorio.ListarRegistros();
+                if (int.TryParse(entradaId, out id))
+                    break;
 
-            foreach (Registro registro in pesquisa)
+                Console.WriteLine("ID inválido. Digite apenas números.");
+            }
+
+            Registro? registroEncontrado = repositorio.ObterRegistroPorId(id, usuario.Id);
+
+            if (registroEncontrado is null)
+            {
+                Console.WriteLine("Nenhum registro encontrado para este ID.");
+            }
+            else
             {
                 Console.WriteLine("");
-                Console.WriteLine($"ID: {registro.IdRegistro}");
-                Console.WriteLine($"Título: {registro.Titulo}");
-                Console.WriteLine($"Conteúdo: {registro.Conteudo}");
-                Console.WriteLine($"Data: {registro.Data}");
+                Console.WriteLine($"ID: {registroEncontrado.Id}");
+                Console.WriteLine($"Título: {registroEncontrado.Titulo}");
+                Console.WriteLine($"Conteúdo: {registroEncontrado.Conteudo}");
+                Console.WriteLine($"Data: {registroEncontrado.Data}");
                 Console.WriteLine("========================");
                 Console.WriteLine("");
             }
 
-            repositorio.PesquisarRegistro(id);
+            Thread.Sleep(2000);
             break;
 
         case "4":
-           
-            Console.WriteLine("Digite o ID que quer remolver: ");
-            int idremover = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("");
+            int idremover;
+            while (true)
+            {
+                Console.WriteLine("Digite o ID que quer remover: ");
+                var entradaIdRemover = Console.ReadLine();
 
-            repositorio.RemoverRegistro(idremover);
+                if (int.TryParse(entradaIdRemover, out idremover))
+                    break;
+
+                Console.WriteLine("ID inválido. Digite apenas números.");
+            }
+
+            repositorio.RemoverRegistro(idremover, usuario.Id);
+            Console.WriteLine("Registro removido com sucesso!");
+            Console.WriteLine("");
+            Thread.Sleep(2000);
             break;
 
         case "5":
             Console.WriteLine("");
             Console.WriteLine("volte sempre!");
+            break;
+
+        default:
+            Console.WriteLine("Opção inválida.");
             break;
     }
 } while (opcao != "5");
