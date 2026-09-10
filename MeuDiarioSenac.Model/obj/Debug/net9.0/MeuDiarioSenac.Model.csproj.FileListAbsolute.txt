@@ -1,0 +1,15 @@
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\bin\Debug\net9.0\MeuDiarioSenac.Model.deps.json
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\bin\Debug\net9.0\MeuDiarioSenac.Model.dll
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\bin\Debug\net9.0\MeuDiarioSenac.Model.pdb
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.AssemblyInfoInputs.cache
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.AssemblyInfo.cs
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.csproj.CoreCompileInputs.cache
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.sourcelink.json
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.dll
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\refint\MeuDiarioSenac.Model.dll
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.pdb
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\ref\MeuDiarioSenac.Model.dll
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\bin\Debug\net9.0\MeuDiarioSenac.Model.runtimeconfig.json
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.csproj.AssemblyReference.cache
+C:\workplace\devWeb\back\MeuDiarioSenac.Model\obj\Debug\net9.0\MeuDiarioSenac.Model.genruntimeconfig.cache

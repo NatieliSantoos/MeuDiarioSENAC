@@ -1,3 +1,4 @@
+namespace MeuDiarioSenac.Model;
 public class Registro
 {
     public int Id { get; set; }

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MeuDiarioSenac.Model;
 using MySql.Data.MySqlClient;
 
 public class MeuDiarioSENACContext : DbContext

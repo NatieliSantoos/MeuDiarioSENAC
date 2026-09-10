@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MeuDiarioSenac.Business\MeuDiarioSenac.Business.csproj" />
     <ProjectReference Include="..\MeuDiarioSenac.Data\MeuDiarioSenac.Data.csproj" />
+    <ProjectReference Include="..\MeuDiarioSenac.Model\MeuDiarioSenac.Model.csproj" />
+    <ProjectReference Include="..\MeuDiarioSenac.Service\MeuDiarioSenac.Service.csproj" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
   </ItemGroup>
 
 </Project>

@@ -1,34 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
+using MeuDiarioSenac.Model;
 
-public class RepositorioDiario
+public class RegistroDAO
 {
     private MeuDiarioSENACContext context = new MeuDiarioSENACContext();
-
-    public Usuario ObterOuCriarUsuario(string nomeUsuario)
-    {
-        if (string.IsNullOrWhiteSpace(nomeUsuario))
-            throw new ArgumentException("O nome do usuário não pode ser vazio.", nameof(nomeUsuario));
-
-        var nome = nomeUsuario.Trim();
-        var usuario = context.Usuarios.FirstOrDefault(u => u.Nome == nome);
-
-        if (usuario is null)
-        {
-            usuario = new Usuario
-            {
-                Nome = nome,
-                Registros = new List<Registro>()
-            };
-
-            context.Usuarios.Add(usuario);
-            context.SaveChanges();
-        }
-
-        return usuario;
-    }
-
     public void CadastrarRegistro(Registro registro)
+
     {
         if (registro is null)
             throw new ArgumentNullException(nameof(registro));
@@ -79,5 +57,4 @@ public class RepositorioDiario
             context.SaveChanges();
         }
     }
-
 }

@@ -16,12 +16,12 @@ namespace MeuDiarioSenac.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.19")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("Registro", b =>
+            modelBuilder.Entity("MeuDiarioSenac.Model.Registro", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace MeuDiarioSenac.Data.Migrations
                     b.ToTable("Registros");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("MeuDiarioSenac.Model.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,14 +62,18 @@ namespace MeuDiarioSenac.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("Registro", b =>
+            modelBuilder.Entity("MeuDiarioSenac.Model.Registro", b =>
                 {
-                    b.HasOne("Usuario", "Usuario")
+                    b.HasOne("MeuDiarioSenac.Model.Usuario", "Usuario")
                         .WithMany("Registros")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -78,7 +82,7 @@ namespace MeuDiarioSenac.Data.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Usuario", b =>
+            modelBuilder.Entity("MeuDiarioSenac.Model.Usuario", b =>
                 {
                     b.Navigation("Registros");
                 });

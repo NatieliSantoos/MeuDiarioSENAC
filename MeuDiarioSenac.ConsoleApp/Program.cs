@@ -1,19 +1,81 @@
-﻿RepositorioDiario repositorio = new RepositorioDiario();
+﻿using MeuDiarioSenac.Model;
+using MeuDiarioSenac.Service;
 
-Console.WriteLine("Digite seu nome de usuario");
-string nomeUsuario;
+UsuarioDAO usuarioDAO = new UsuarioDAO();
+RegistroDAO registroDAO = new RegistroDAO();
+UsuarioService usuarioService = new UsuarioService(usuarioDAO);
+RegistroService registroService = new RegistroService(registroDAO);
 
-while (true)
+Usuario? usuario = null;
+while (usuario is null)
 {
-    nomeUsuario = Console.ReadLine() ?? string.Empty;
+    Console.WriteLine("1 = Entrar");
+    Console.WriteLine("2 = Cadastrar novo usuário");
+    Console.WriteLine("3 = Alterar usuário");
+    Console.WriteLine("4 = Excluir usuário");
+    Console.WriteLine("5 = Sair");
+    Console.Write("Escolha uma opção: ");
+    string opcaoInicial = Console.ReadLine() ?? string.Empty;
 
-    if (!string.IsNullOrWhiteSpace(nomeUsuario))
-        break;
+    if (opcaoInicial == "5")
+        return;
 
-    Console.WriteLine("Nome inválido. Digite um nome para continuar.");
+    if (opcaoInicial != "1" && opcaoInicial != "2" && opcaoInicial != "3" && opcaoInicial != "4")
+    {
+        Console.WriteLine("Opção inválida.");
+        continue;
+    }
+
+    Console.Write("Digite seu nome de usuario: ");
+    string nomeUsuario = Console.ReadLine() ?? string.Empty;
+    Console.Write("Digite sua senha: ");
+    string senha = Console.ReadLine() ?? string.Empty;
+
+    try
+    {
+        if (opcaoInicial == "1")
+        {
+            usuario = usuarioService.AutenticarUsuario(nomeUsuario, senha);
+            if (usuario is null)
+                Console.WriteLine("Nome de usuário ou senha incorretos.");
+        }
+        else if (opcaoInicial == "2")
+        {
+            usuario = usuarioService.CadastrarUsuario(nomeUsuario, senha);
+            Console.WriteLine("Cadastro realizado com sucesso!");
+        }
+        else
+        {
+            Usuario? usuarioAutenticado = usuarioService.AutenticarUsuario(nomeUsuario, senha);
+            if (usuarioAutenticado is null)
+            {
+                Console.WriteLine("Nome de usuário ou senha incorretos.");
+                continue;
+            }
+
+            if (opcaoInicial == "3")
+            {
+                Console.Write("Digite o novo nome de usuário: ");
+                usuarioAutenticado.Nome = Console.ReadLine() ?? string.Empty;
+                Console.Write("Digite a nova senha: ");
+                usuarioAutenticado.Senha = Console.ReadLine() ?? string.Empty;
+
+                usuarioService.AlterarUsuario(usuarioAutenticado);
+                Console.WriteLine("Usuário alterado com sucesso!");
+            }
+            else
+            {
+                usuarioService.ExcluirUsuario(usuarioAutenticado.Id);
+                Console.WriteLine("Usuário excluído com sucesso!");
+                return;
+            }
+        }
+    }
+    catch (Exception ex) when (ex is ArgumentException or InvalidOperationException)
+    {
+        Console.WriteLine(ex.Message);
+    }
 }
-
-var usuario = repositorio.ObterOuCriarUsuario(nomeUsuario);
 
 Console.WriteLine($"Bem vindo, {usuario.Nome}!");
 Console.WriteLine("============================");
@@ -28,9 +90,9 @@ do
     Console.WriteLine("2 = Listar seus Registros");
     Console.WriteLine("3 = Pesquisar seus registros");
     Console.WriteLine("4 = Deletar  registro");
-    Console.WriteLine("5 =  SAIR ");
+    Console.WriteLine("5 = SAIR");
     Console.WriteLine("============================");
-    opcao = Console.ReadLine();
+    opcao = Console.ReadLine() ?? string.Empty;
 
     switch (opcao)
     {
@@ -65,7 +127,7 @@ do
 
             try
             {
-                repositorio.CadastrarRegistro(registro: cadastrar);
+                registroService.CadastrarRegistro(registro: cadastrar);
                 Console.WriteLine("Registro SALVO com sucesso!");
             }
             catch (Exception ex)
@@ -77,7 +139,7 @@ do
             break;
 
         case "2":
-            List<Registro> listar = repositorio.ListarRegistrosPorUsuario(usuario.Id);
+            List<Registro> listar = registroService.ListarRegistrosPorUsuario(usuario.Id);
 
             foreach (Registro registro in listar)
             {
@@ -104,7 +166,7 @@ do
                 Console.WriteLine("ID inválido. Digite apenas números.");
             }
 
-            Registro? registroEncontrado = repositorio.ObterRegistroPorId(id, usuario.Id);
+            Registro? registroEncontrado = registroService.ObterRegistroPorId(id, usuario.Id);
 
             if (registroEncontrado is null)
             {
@@ -119,6 +181,7 @@ do
                 Console.WriteLine($"Data: {registroEncontrado.Data}");
                 Console.WriteLine("========================");
                 Console.WriteLine("");
+
             }
 
             Thread.Sleep(2000);
@@ -137,7 +200,7 @@ do
                 Console.WriteLine("ID inválido. Digite apenas números.");
             }
 
-            repositorio.RemoverRegistro(idremover, usuario.Id);
+            registroService.RemoverRegistro(idremover, usuario.Id);
             Console.WriteLine("Registro removido com sucesso!");
             Console.WriteLine("");
             Thread.Sleep(2000);
