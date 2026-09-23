@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeuDiarioSenac.ConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04a37de90d04024aa1d7e2d0886b824737d6db93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+702ce6230ea8ba28f5df1eab65d3c781c2434a04")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeuDiarioSenac.ConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeuDiarioSenac.ConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
