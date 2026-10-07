@@ -27,6 +27,11 @@ public class RegistroService
 		return _registroDAO.ObterRegistroPorId(id, usuarioId);
 	}
 
+	public Registro? AtualizarRegistro(int id, int usuarioId, string titulo, string conteudo, DateTime? data)
+	{
+		return _registroDAO.AtualizarRegistro(id, usuarioId, titulo, conteudo, data);
+	}
+
 	public void RemoverRegistro(int id, int usuarioId)
 	{
 		_registroDAO.RemoverRegistro(id, usuarioId);

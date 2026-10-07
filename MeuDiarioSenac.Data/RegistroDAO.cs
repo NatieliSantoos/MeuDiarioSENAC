@@ -46,6 +46,29 @@ public class RegistroDAO
             .FirstOrDefault(r => r.Id == id && r.UsuarioId == usuarioId);
     }
 
+    public Registro? AtualizarRegistro(int id, int usuarioId, string titulo, string conteudo, DateTime? data)
+    {
+        if (string.IsNullOrWhiteSpace(titulo))
+            throw new ArgumentException("O título do registro não pode ser vazio.", nameof(titulo));
+
+        if (string.IsNullOrWhiteSpace(conteudo))
+            throw new ArgumentException("O conteúdo do registro não pode ser vazio.", nameof(conteudo));
+
+        var registro = context.Registros
+            .FirstOrDefault(r => r.Id == id && r.UsuarioId == usuarioId);
+
+        if (registro is null)
+            return null;
+
+        registro.Titulo = titulo;
+        registro.Conteudo = conteudo;
+        if (data.HasValue && data.Value != default)
+            registro.Data = data.Value;
+
+        context.SaveChanges();
+        return registro;
+    }
+
     public void RemoverRegistro(int id, int usuarioId)
     {
         var registro = context.Registros

@@ -1321,19 +1321,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Prog_Sis\\.nuget\\packages\\": {}
+    "C:\\Users\\snati\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Business\\MeuDiarioSenac.Business.csproj",
+      "projectUniqueName": "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Business\\MeuDiarioSenac.Business.csproj",
       "projectName": "MeuDiarioSenac.Business",
-      "projectPath": "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Business\\MeuDiarioSenac.Business.csproj",
-      "packagesPath": "C:\\Users\\Prog_Sis\\.nuget\\packages\\",
-      "outputPath": "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Business\\obj\\",
+      "projectPath": "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Business\\MeuDiarioSenac.Business.csproj",
+      "packagesPath": "C:\\Users\\snati\\.nuget\\packages\\",
+      "outputPath": "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Prog_Sis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\snati\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1345,11 +1345,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Data\\MeuDiarioSenac.Data.csproj": {
-              "projectPath": "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Data\\MeuDiarioSenac.Data.csproj"
+            "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Data\\MeuDiarioSenac.Data.csproj": {
+              "projectPath": "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Data\\MeuDiarioSenac.Data.csproj"
             },
-            "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Model\\MeuDiarioSenac.Model.csproj": {
-              "projectPath": "C:\\workplace\\devWeb\\back\\MeuDiarioSenac.Model\\MeuDiarioSenac.Model.csproj"
+            "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Model\\MeuDiarioSenac.Model.csproj": {
+              "projectPath": "C:\\Projeto jovem programador\\MeuDiarioSenac\\back\\MeuDiarioSenac.Model\\MeuDiarioSenac.Model.csproj"
             }
           }
         }

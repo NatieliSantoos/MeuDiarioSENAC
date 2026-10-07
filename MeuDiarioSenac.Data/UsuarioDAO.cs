@@ -38,6 +38,11 @@ public class UsuarioDAO
         return usuario is not null && usuario.Senha == senha ? usuario : null;
     }
 
+    public Usuario? ObterUsuarioPorId(int id)
+    {
+        return context.Usuarios.FirstOrDefault(u => u.Id == id);
+    }
+
     public Usuario ObterOuCriarUsuario(string nomeUsuario, string senha)
     {
         if (string.IsNullOrWhiteSpace(nomeUsuario))

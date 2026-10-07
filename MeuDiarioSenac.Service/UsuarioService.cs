@@ -22,6 +22,11 @@ public class UsuarioService
         return _repositorio.AutenticarUsuario(nomeUsuario, senha);
     }
 
+    public Usuario? ObterUsuarioPorId(int id)
+    {
+        return _repositorio.ObterUsuarioPorId(id);
+    }
+
     public Usuario ObterOuCriarUsuario(string nomeUsuario, string senha)
     {
         return _repositorio.ObterOuCriarUsuario(nomeUsuario, senha);

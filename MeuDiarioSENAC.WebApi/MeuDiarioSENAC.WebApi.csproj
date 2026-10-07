@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeuDiarioSenac.ConsoleApp\MeuDiarioSenac.ConsoleApp.csproj" />
+    <ProjectReference Include="..\MeuDiarioSenac.Data\MeuDiarioSenac.Data.csproj" />
+    <ProjectReference Include="..\MeuDiarioSenac.Model\MeuDiarioSenac.Model.csproj" />
+  </ItemGroup>
+
+</Project>

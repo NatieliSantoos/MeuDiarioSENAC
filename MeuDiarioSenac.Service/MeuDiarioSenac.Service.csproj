@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MeuDiarioSenac.ConsoleApp\MeuDiarioSenac.ConsoleApp.csproj" />
     <ProjectReference Include="..\MeuDiarioSenac.Data\MeuDiarioSenac.Data.csproj" />
     <ProjectReference Include="..\MeuDiarioSenac.Model\MeuDiarioSenac.Model.csproj" />
+    <ProjectReference Include="..\MeuDiarioSENAC.WebApi\MeuDiarioSENAC.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.20" />
   </ItemGroup>
 
 </Project>
